@@ -1,0 +1,519 @@
+/* --- RESET & GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- NAVBAR STYLES --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b4332; /* Deep school green */
+    padding: 20px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #f4f4f4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #52b788; /* Accent light green */
+}
+
+/* Mobile Menu Button hidden by default */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* --- HERO SECTION STYLES --- */
+.hero {
+    height: 80vh;
+    /* Placeholder fallback image. Replace with your own school banner URL later */
+    background-image: url(./images/download\ \(30\).jpg);
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #52b788;
+    color: #1b4332;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #40916c;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: #1b4332;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --- MOBILE RESPONSIVENESS VIA MEDIA QUERY --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none; /* Hide standard links on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #1b4332;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-top: 1px solid #40916c;
+    }
+
+    /* JavaScript will toggle this class to show/hide mobile menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 15px 0;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+/* --- KEY HIGHLIGHTS SECTION --- */
+.highlights-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.highlights-grid {
+    display: grid;
+    /* This creates a fully responsive grid system without needing media queries */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.highlight-card {
+    background-color: #fff;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border-bottom: 4px solid #1b4332; /* Bottom accent border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fun hover effect to make the website feel interactive */
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.highlight-card h3 {
+    font-size: 32px;
+    color: #1b4332;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.highlight-card p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+/* --- ABOUT PAGE GLOBAL CONTAINER --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title-section h2 {
+    font-size: 36px;
+    color: #1b4332;
+    margin-bottom: 10px;
+}
+
+/* --- MISSION & VISION (FLEXBOX) --- */
+.mission-vision-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Ensures stacked columns on small screens */
+}
+
+.info-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #52b788; /* Left accent bar */
+}
+
+.info-card h3 {
+    color: #1b4332;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* --- FACULTY CARDS (GRID) --- */
+.faculty-section {
+    text-align: center;
+}
+
+.faculty-section h3 {
+    font-size: 28px;
+    color: #1b4332;
+    margin-bottom: 30px;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.faculty-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+}
+
+.faculty-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Perfect circle */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.faculty-card h4 {
+    color: #333;
+    font-size: 18px;
+}
+
+.faculty-card .title {
+    color: #777;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* --- ACADEMICS: CURRICULUM CARDS --- */
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.curriculum-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    border-top: 4px solid #1b4332;
+}
+
+.curriculum-card h3 {
+    color: #1b4332;
+    margin-bottom: 10px;
+}
+
+/* --- ACADEMICS: TABLE STYLING --- */
+.calendar-section h3 {
+    font-size: 24px;
+    color: #1b4332;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto; /* Adds swiping behavior on small phone layouts */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+th {
+    background-color: #1b4332;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr {
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+/* Custom Status Badges */
+.status-tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-tag.complete {
+    background-color: #d8f3dc;
+    color: #1b4332;
+}
+
+.status-tag.upcoming {
+    background-color: #ffe3e3;
+    color: #c91818;
+}
+
+/* --- CONTACT PAGE: SIDE-BY-SIDE WRAPPER --- */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+
+.contact-info h3, .contact-form-container h3 {
+    color: #1b4332;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+/* --- CONTACT FORM FIELDS --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #52b788;
+}
+
+.submit-btn {
+    background-color: #1b4332;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2d6a4f;
+}
+
+/* --- JAVASCRIPT VALIDATION STYLES --- */
+.error-message {
+    color: #c91818;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+    display: none; /* Managed by JavaScript */
+}
+
+/* Red border style injected by JavaScript when validation fails */
+.form-group input.input-error, .form-group textarea.input-error {
+    border-color: #c91818;
+    background-color: #ffe3e3;
+}
+
+/* --- CUSTOM ALERT MODAL --- */
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Blurs out the background */
+    display: none; /* Hidden by default until JS opens it */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* This class will be added by JavaScript to show the popup */
+.custom-alert-overlay.show {
+    display: flex;
+}
+
+.custom-alert-box {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: popupFadeIn 0.3s ease-out; /* Smooth entry animation */
+}
+/* 
+@keyframes popupFadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.alert-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.custom-alert-box h2 {
+    color: #1b4332;
+    margin-bottom: 10px;
+}
+
+.custom-alert-box p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.close-alert-btn {
+    background-color: #52b788;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.close-alert-btn:hover {
+    background-color: #40916c;
+} */
+
+
